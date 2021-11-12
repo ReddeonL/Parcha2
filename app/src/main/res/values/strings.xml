@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">parcha2App</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="textobtn1">Ingresar</string>
+    <string name="txtbtn2">Registrarse</string>
+    <string name="email">Ingrese su email</string>
+    <string name="contraseña">Ingrese su password</string>
+    <string name="conficontraseña">confirme su contraseña</string>
+    <string name="nombre">Ingrese su nombre</string>
+    <string name="apellido">Ingrese su apellido</string>
+    <string name="cerrar">Salir</string>
+    <string name="arecuperar">Reperar contraseña</string>
 </resources>
