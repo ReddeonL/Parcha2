@@ -23,7 +23,7 @@ public class Registro extends AppCompatActivity {
         emailtxt=(EditText) findViewById(R.id.txtcorreo);
         edadtxt=(Spinner)  findViewById((R.id.spinneredad));
         String [] menu={"15-20 años","20-30 años","30-40 años","40-50 años",">50 años"};
-        ArrayAdapter <String> menu_adap=new ArrayAdapter<>(this,R.layout.support_simple_spinner_dropdown_item);
+        ArrayAdapter <String> menu_adap=new ArrayAdapter<>(this,R.layout.support_simple_spinner_dropdown_item,menu);
         edadtxt.setAdapter(menu_adap);
     }
     public void registrar(View vista){
