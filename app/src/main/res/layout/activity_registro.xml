@@ -7,50 +7,59 @@
     tools:context=".Registro">
 
     <LinearLayout
-        android:layout_width="409dp"
-        android:layout_height="729dp"
+        android:id="@+id/linearLayout"
+        android:layout_width="264dp"
+        android:layout_height="460dp"
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="1dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:layout_constraintVertical_bias="0.664">
 
         <EditText
-            android:id="@+id/editTextTextPersonName"
+            android:id="@+id/txtnombre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:hint="ingrese su nombre"
             android:inputType="textPersonName"
-            android:text="Name" />
+            android:minHeight="48dp" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName2"
+            android:id="@+id/txtapellido"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:hint="ingrese su apellido"
             android:inputType="textPersonName"
-            android:text="apellido" />
+            android:minHeight="48dp" />
 
         <EditText
-            android:id="@+id/editTextTextEmailAddress2"
+            android:id="@+id/txtcorreo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="correo"
-            android:inputType="textEmailAddress" />
+            android:hint="ingrese su correo electronico"
+            android:inputType="textEmailAddress"
+            android:minHeight="48dp" />
 
         <Spinner
-            android:id="@+id/spinner"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <CheckBox
-            android:id="@+id/checkBox"
+            android:id="@+id/spinneredad"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="soy mayor de 18}" />
+            android:minHeight="48dp" />
 
         <RadioGroup
             android:layout_width="325dp"
-            android:layout_height="191dp" >
+            android:layout_height="191dp">
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Genero " />
 
             <RadioButton
                 android:id="@+id/radioButton3"
@@ -70,5 +79,31 @@
                 android:layout_height="wrap_content"
                 android:text="femenino" />
         </RadioGroup>
+
+        <CheckBox
+            android:id="@+id/checkBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Autorizo compartir mi informacion" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="registrar"
+            android:text="Registrar" />
+
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Parcha2App"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
