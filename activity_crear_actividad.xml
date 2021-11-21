@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Crear_actividad">
+
+    <ScrollView
+        android:layout_width="380dp"
+        android:layout_height="701dp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="29dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_crear_actv"
+                android:layout_width="274dp"
+                android:layout_height="52dp"
+                android:text="@string/acrear_actividad"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/editTextNombre_actv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/acrear_nombre"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/edit_Descripcion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:gravity="start|top"
+                android:hint="@string/acrear_descripcion"
+                android:inputType="textMultiLine" />
+
+            <EditText
+                android:id="@+id/editnumparticipantes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/acrear_numparticipantes"
+                android:inputType="number" />
+
+            <EditText
+                android:id="@+id/editTextTiempo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="time" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
