@@ -9,11 +9,13 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 public class Mapa_principal extends AppCompatActivity {
+    public int userIcon,actividadIcon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mapa_principal);
+
     }
     public boolean onCreateOptionsMenu(Menu menu){
         getMenuInflater().inflate(R.menu.opciones,menu);
@@ -36,7 +38,7 @@ public class Mapa_principal extends AppCompatActivity {
            // startActivity(iropcion2);
         }
         if(id==R.id.item3){
-            Toast.makeText(this,"usted selecciono la opcion 3", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this,"usted selecciono la opcion 3", Toast.LENGTH_SHORT).show();
             Intent iropcion3= new Intent(this, Acercade.class);
             startActivity(iropcion3);
         }
