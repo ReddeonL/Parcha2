@@ -22,7 +22,8 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Correo electronico"
-            android:inputType="textEmailAddress" />
+            android:inputType="textEmailAddress"
+            android:minHeight="48dp" />
 
         <EditText
             android:id="@+id/editTextTextPassword"
@@ -30,13 +31,13 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="contraseña"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:minHeight="48dp" />
 
         <Button
             android:id="@+id/ingrese"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="env_maps"
             android:text="ingrese" />
 
         <Button

@@ -22,8 +22,8 @@ public class Logins extends AppCompatActivity {
         Intent irolvido= new Intent(this, Olvido.class);
         startActivity(irolvido);
     }
-    public void env_maps(View vista){
+   /* public void env_maps(View vista){
         Intent irmaps= new Intent(this, MapsActivity.class);
         startActivity(irmaps);
-    }
+    }*/
 }
