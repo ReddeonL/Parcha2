@@ -34,8 +34,8 @@ public class Mapa_principal extends AppCompatActivity {
         if(id==R.id.item2){
             Toast.makeText(this,"usted selecciono la opcion 2", Toast.LENGTH_SHORT).show();
             //aca poner la redireccion a unirse actividad
-           // Intent iropcion2= new Intent(this, Opcion2Activity.class);
-           // startActivity(iropcion2);
+            Intent iropcion2= new Intent(this, Unirse.class);
+            startActivity(iropcion2);
         }
         if(id==R.id.item3){
             //Toast.makeText(this,"usted selecciono la opcion 3", Toast.LENGTH_SHORT).show();
