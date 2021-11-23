@@ -1,8 +1,12 @@
 package com.example.parcha2app;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -15,7 +19,7 @@ public class Mapa_principal extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mapa_principal);
-
+        getpermiso();
     }
     public boolean onCreateOptionsMenu(Menu menu){
         getMenuInflater().inflate(R.menu.opciones,menu);
@@ -44,5 +48,19 @@ public class Mapa_principal extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+    //permiso de gps
+    private void getpermiso(){
+        int permiso= ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION);
+        if(permiso== PackageManager.PERMISSION_DENIED){
+            if(ActivityCompat.shouldShowRequestPermissionRationale(this,Manifest.permission.ACCESS_FINE_LOCATION)){
+
+            }else{
+                ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.ACCESS_FINE_LOCATION},1);
+            }
+
+        }
+    }
+
 
 }
