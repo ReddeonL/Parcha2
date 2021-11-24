@@ -18,8 +18,9 @@ public class Mapa_principal extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mapa_principal);
         getpermiso();
+        setContentView(R.layout.activity_mapa_principal);
+
     }
     public boolean onCreateOptionsMenu(Menu menu){
         getMenuInflater().inflate(R.menu.opciones,menu);
