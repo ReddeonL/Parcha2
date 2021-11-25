@@ -20,6 +20,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Parcha2App">
         <activity
+            android:name=".Crear_Actividad"
+            android:exported="false" />
+        <activity
             android:name=".Unirse"
             android:exported="false" />
         <activity

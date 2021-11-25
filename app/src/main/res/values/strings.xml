@@ -8,11 +8,19 @@
     <string name="conficontraseña">confirme su contraseña</string>
     <string name="nombre">Ingrese su nombre</string>
     <string name="apellido">Ingrese su apellido</string>
-    <string name="cerrar">Salir de la aplicación</string>
+    <string name="cerrar">Salir </string>
     <string name="arecuperar">Reperar contraseña</string>
     <string name="bienvenida">Parcha2 es una app que te acerca a los que más quieres, te ayudará a que puedas localizar el lugar donde te encuentras y en dónde te encontrarán, crear grupos con compañeros o amigos, gestionar y coordinar reuniones o actividades. Bienvenido a la app que crea los mejores parches con Parcha2.</string>
     <string name="acercade">Somos una iniciativa que busca acercar a las personas para volver a encontrarnos, nuestro equipo de trabajo esta conformado por: Ana Gonzalez, Martha Moron, David Reyes, Sergio Alvarez y Leonardo Donado</string>
-
-
-
+    <!-- strings de crear actividad-->
+    <string name="nombre_actividad">Nombre para la actividad</string>
+    <string name="descripcion_actividad"> Descripcion de la actividad</string>
+    <string name="participante_actividad">No participantes</string>
+    <string name="autor_actividad">Creado por:</string>
+    <string name="fecha_actividad">inserte fecha</string>
+    <string name="hora_actividad">inserte hora</string>
+    <string name="puntomapa">seleccione un punto en el mapa en el siguiente boton</string>
+    <string name="ir_mapa">ir al mapa</string>
+    <string name="ir_mapa_anterior">si la actividad seleccionada no es la deseada, seleccione otro punto en mapa de la pantalla anterior</string>
+    <string name="btnunirse">unirse a actividad</string>
 </resources>

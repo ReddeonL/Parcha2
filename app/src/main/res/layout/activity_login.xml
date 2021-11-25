@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <EditText
-            android:id="@+id/editTextTextEmailAddress"
+            android:id="@+id/EtEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -26,7 +26,7 @@
             android:minHeight="48dp" />
 
         <EditText
-            android:id="@+id/editTextTextPassword"
+            android:id="@+id/EtPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -35,21 +35,21 @@
             android:minHeight="48dp" />
 
         <Button
-            android:id="@+id/ingrese"
+            android:id="@+id/btningrese"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="env_maps"
             android:text="ingrese" />
 
         <Button
-            android:id="@+id/registrese"
+            android:id="@+id/btnregistrese"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="env_registro"
             android:text="Registrese" />
 
         <Button
-            android:id="@+id/olvido"
+            android:id="@+id/btnolvido"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="env_olvido"

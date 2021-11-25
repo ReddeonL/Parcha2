@@ -31,13 +31,13 @@ public class Mapa_principal extends AppCompatActivity {
 
         int id =item.getItemId();
         if(id==R.id.item1){
-            Toast.makeText(this,"usted selecciono la opcion 1", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this,"usted selecciono la opcion 1", Toast.LENGTH_SHORT).show();
             //aca poner la redireccion a crear actividad
-            //Intent iropcion1= new Intent(this, Opcion1Actvity.class);
-            //startActivity(iropcion1);
+            Intent iropcion1= new Intent(this, Crear_Actividad.class);
+            startActivity(iropcion1);
         }
         if(id==R.id.item2){
-            Toast.makeText(this,"usted selecciono la opcion 2", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this,"usted selecciono la opcion 2", Toast.LENGTH_SHORT).show();
             //aca poner la redireccion a unirse actividad
             Intent iropcion2= new Intent(this, Unirse.class);
             startActivity(iropcion2);

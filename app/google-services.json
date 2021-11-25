@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "184820400984",
+    "project_id": "basedatosparcha",
+    "storage_bucket": "basedatosparcha.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:184820400984:android:02fe9d908ac05e321c9b2d",
+        "android_client_info": {
+          "package_name": "com.example.parcha2app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "184820400984-6jqr1hj1sa946k6p37epqt2jccdb8mp7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBl0f8clnD6t4jck7275r9gPshkhm76WeY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "184820400984-6jqr1hj1sa946k6p37epqt2jccdb8mp7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
