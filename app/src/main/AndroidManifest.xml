@@ -14,11 +14,14 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/iconoparcha2"
+        android:icon="@drawable/logoparcha2"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Parcha2App">
+        <activity
+            android:name=".MapaCrearActividad"
+            android:exported="false" />
         <activity
             android:name=".Crear_Actividad"
             android:exported="false" />

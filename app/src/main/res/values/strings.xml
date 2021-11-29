@@ -23,4 +23,7 @@
     <string name="ir_mapa">ir al mapa</string>
     <string name="ir_mapa_anterior">si la actividad seleccionada no es la deseada, seleccione otro punto en mapa de la pantalla anterior</string>
     <string name="btnunirse">unirse a actividad</string>
+    <string name="btsel_fecha">Seleccione la fecha</string>
+    <string name="btsel_hora">Seleccione la hora</string>
+
 </resources>

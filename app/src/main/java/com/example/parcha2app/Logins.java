@@ -43,6 +43,5 @@ public class Logins extends AppCompatActivity {
     public void env_maps(View vista){
         Intent irmaps= new Intent(this, Mapa_principal.class);
         startActivity(irmaps);
-
     }
 }
