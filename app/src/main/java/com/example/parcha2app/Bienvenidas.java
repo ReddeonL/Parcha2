@@ -6,12 +6,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class Bienvenidas extends AppCompatActivity {
-    private FirebaseAuth mAuth;
+
 
     private ProgressBar barradeprogreso;
 
@@ -20,7 +21,7 @@ public class Bienvenidas extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bienvenido);
         barradeprogreso= (ProgressBar) findViewById(R.id.Pb1);
-        mAuth=FirebaseAuth.getInstance();
+        Toast.makeText(this, "bienvenido", Toast.LENGTH_LONG).show();
 
     }
     public void env_login(View vista){
@@ -28,14 +29,5 @@ public class Bienvenidas extends AppCompatActivity {
         startActivity(irlogin);
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        FirebaseUser user= mAuth.getCurrentUser();
-        if (user==null){
-            startActivity(new Intent(this,Logins.class));
-        }else{
-            startActivity(new Intent(this,Mapa_principal.class));
-        }
-    }
+
 }

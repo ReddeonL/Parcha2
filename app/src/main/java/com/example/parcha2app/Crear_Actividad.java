@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.TimePicker;
 
 import java.util.Calendar;
@@ -19,17 +20,25 @@ public class Crear_Actividad extends AppCompatActivity implements View.OnClickLi
     Button bfecha,bhora;
     EditText efecha,ehora;
     private int dia,mes,anho,hora,minutos;
+    private TextView suscorrdenadas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_crear_actividad);
+        //para los botones de hora y fecha
         bfecha=(Button)findViewById(R.id.btnfecha);
         bhora=(Button)findViewById(R.id.btnhora);
         efecha=(EditText) findViewById(R.id.txtfecha);
         ehora=(EditText) findViewById(R.id.txthora);
         bfecha.setOnClickListener(this);
         bhora.setOnClickListener(this);
+        // para las coordenadas importadas del mapa
+        suscorrdenadas=(TextView) findViewById(R.id.tvcoordenadas);
+        Double latitud_importado =getIntent().getDoubleExtra("latitud",0);
+        Double longitud_importado =getIntent().getDoubleExtra("longitud",0);
+        suscorrdenadas.setText("sus coordenadas son "+latitud_importado+"latitud "+longitud_importado+" longitud");
+
     }
 
     //metodos para witget de fecha y hora
