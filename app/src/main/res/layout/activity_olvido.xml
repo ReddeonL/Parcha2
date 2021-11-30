@@ -30,26 +30,8 @@
             android:inputType="textEmailAddress"
             android:minHeight="48dp" />
 
-        <EditText
-            android:id="@+id/editTextTextPersonName3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Ingrese el codigo enviado "
-            android:inputType="textPersonName"
-            android:minHeight="48dp" />
-
-        <EditText
-            android:id="@+id/editTextTextPassword2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="ingrese su nueva contraseña"
-            android:inputType="textPassword"
-            android:minHeight="48dp" />
-
         <Button
-            android:id="@+id/button"
+            android:id="@+id/btn_recuperar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="restaurar"

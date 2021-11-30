@@ -1,5 +1,6 @@
 package com.example.parcha2app;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -8,28 +9,92 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class Logins extends AppCompatActivity {
 
     //variables
-    private EditText Emailtxt;
-    private TextInputLayout txtpassword;
-    private Button btnLogin;
-    private FirebaseAuth mAuth;
+    private EditText Emailtxt, etpasswordsign;
 
+    private Button btnLogin;
+    private FirebaseAuth mAuth2;
+    private static final String TAG="tester";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         //asignamos objetos a las variables
-        Emailtxt=(EditText) findViewById(R.id.txtcorreo);
-        //txtpassword=findViewById(R.id.EtPassword);
+        Emailtxt=(EditText) findViewById(R.id.EtEmail);
+        etpasswordsign=findViewById(R.id.EtPassword);
+        btnLogin=(Button)findViewById(R.id.btningrese);
+
+        mAuth2=FirebaseAuth.getInstance();
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String email2=Emailtxt.getText().toString();
+                String password2=etpasswordsign.getText().toString();
+                ingresa2(email2,password2);
+                env_maps(v);
+
+            }
+        });
+
+    }
+
+    private void ingresa2(String email, String password){
+        mAuth2.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            // Sign in success, update UI with the signed-in user's information
+                            Log.d(TAG, "signInWithEmail:success");
+                            FirebaseUser user = mAuth2.getCurrentUser();
+                            updateUI(user);
+                            Emailtxt.setText("");
+                            etpasswordsign.setText("");
+                            Toast.makeText(Logins.this, "Bienvenido!!!",
+                                    Toast.LENGTH_SHORT).show();
+
+                        } else {
+                            // If sign in fails, display a message to the user.
+                            Log.w(TAG, "signInWithEmail:failure", task.getException());
+                            Toast.makeText(Logins.this, "Authentication failed.",
+                                    Toast.LENGTH_SHORT).show();
+                            updateUI(null);
+                        }
+                    }
+                });
+
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        //Check if user is signed in (non-null) and update UI accordingly.
+        FirebaseUser currentUser = mAuth2.getCurrentUser();
+        if(currentUser != null){
+            reload();
+        }
+    }
+
+    private void reload() { }
+
+
+    private void updateUI(FirebaseUser user) {
+
     }
 
     public void env_registro(View vista){
@@ -41,7 +106,8 @@ public class Logins extends AppCompatActivity {
         startActivity(irolvido);
     }
     public void env_maps(View vista){
-        Intent irmaps= new Intent(this, MapaCrearActividad.class);
+        Intent irmaps= new Intent(this, MapaCrearActividad  .class);
         startActivity(irmaps);
+
     }
 }
