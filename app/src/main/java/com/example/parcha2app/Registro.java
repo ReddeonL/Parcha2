@@ -46,7 +46,7 @@ public class Registro extends AppCompatActivity {
         apellidotxt = (EditText) findViewById(R.id.txtapellido);
         emailtxt = (EditText) findViewById(R.id.txtcorreo);
         contrasenatxt = (EditText) findViewById(R.id.editTextcont);
-        mostrar = (TextView) findViewById(R.id.textView9);
+
         registrar = (Button) findViewById(R.id.button2);
         edadtxt = (Spinner) findViewById((R.id.spinneredad));
         String[] menu = {"15-20 años", "20-30 años", "30-40 años", "40-50 años", ">50 años"};
@@ -102,13 +102,13 @@ public class Registro extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "createUserWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
-                           // updateUI(user);
+                            updateUI(user);
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "createUserWithEmail:failure", task.getException());
                             Toast.makeText(getApplicationContext(), "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
-                            //updateUI(null);
+                            updateUI(null);
                         }
                     }
                 });
@@ -128,6 +128,8 @@ public class Registro extends AppCompatActivity {
 
     private void reload() {
     }
+    private void updateUI(FirebaseUser user) {
 
+    }
 
 }

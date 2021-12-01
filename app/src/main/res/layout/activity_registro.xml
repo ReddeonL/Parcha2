@@ -106,12 +106,6 @@
                 android:onClick="registrar"
                 android:text="Registrar" />
 
-            <TextView
-                android:id="@+id/textView9"
-                android:layout_width="284dp"
-                android:layout_height="35dp"
-                android:text="Ver" />
-
         </LinearLayout>
     </ScrollView>
 
