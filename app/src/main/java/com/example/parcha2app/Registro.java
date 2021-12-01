@@ -129,8 +129,5 @@ public class Registro extends AppCompatActivity {
     private void reload() {
     }
 
-    private void updateUI(FirebaseUser user) {
-
-    }
 
 }

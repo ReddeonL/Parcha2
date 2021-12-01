@@ -14,13 +14,13 @@ import com.google.firebase.auth.FirebaseUser;
 public class Bienvenidas extends AppCompatActivity {
 
 
-    private ProgressBar barradeprogreso;
+    //private ProgressBar barradeprogreso;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bienvenido);
-        barradeprogreso= (ProgressBar) findViewById(R.id.Pb1);
+        //barradeprogreso= (ProgressBar) findViewById(R.id.Pb1);
         Toast.makeText(this, "bienvenido", Toast.LENGTH_LONG).show();
 
     }

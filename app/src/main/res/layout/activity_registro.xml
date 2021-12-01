@@ -89,6 +89,15 @@
                 android:layout_height="wrap_content"
                 android:text="Autorizo compartir mi informacion" />
 
+            <EditText
+                android:id="@+id/editTextcont"
+                android:layout_width="253dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="contraseña"
+                android:inputType="textPersonName"
+                android:minHeight="48dp" />
+
             <Button
                 android:id="@+id/button2"
                 android:layout_width="276dp"
@@ -96,15 +105,6 @@
                 android:minHeight="48dp"
                 android:onClick="registrar"
                 android:text="Registrar" />
-
-            <EditText
-                android:id="@+id/editTextcont"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:minHeight="48dp"
-                android:text="Cont" />
 
             <TextView
                 android:id="@+id/textView9"

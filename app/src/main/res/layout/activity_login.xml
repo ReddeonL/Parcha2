@@ -38,7 +38,7 @@
             android:id="@+id/btningrese"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="env_maps"
+            android:onClick="ingresa2"
             android:text="ingrese" />
 
         <Button

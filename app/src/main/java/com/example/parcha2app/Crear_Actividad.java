@@ -12,11 +12,20 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.Calendar;
 
 public class Crear_Actividad extends AppCompatActivity implements View.OnClickListener {
+//variables para base de datos
+    private DatabaseReference Actividades;
+    public EditText idactividad_txt, nombreactividad_txt, descripcion_txt, num_part_txt;
+
     //variables para widgets de fecha y hora
+
     Button bfecha,bhora;
     EditText efecha,ehora;
     private int dia,mes,anho,hora,minutos;
@@ -26,6 +35,7 @@ public class Crear_Actividad extends AppCompatActivity implements View.OnClickLi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_crear_actividad);
+        Actividades= FirebaseDatabase.getInstance().getReference("Actividades");
         //para los botones de hora y fecha
         bfecha=(Button)findViewById(R.id.btnfecha);
         bhora=(Button)findViewById(R.id.btnhora);
@@ -38,7 +48,10 @@ public class Crear_Actividad extends AppCompatActivity implements View.OnClickLi
         Double latitud_importado =getIntent().getDoubleExtra("latitud",0);
         Double longitud_importado =getIntent().getDoubleExtra("longitud",0);
         suscorrdenadas.setText("sus coordenadas son "+latitud_importado+"latitud "+longitud_importado+" longitud");
-
+        //para tomar datos
+        nombreactividad_txt=(EditText)findViewById(R.id.et_nombreactividad);
+        descripcion_txt=(EditText)findViewById(R.id.txtdescripcion);
+        num_part_txt=(EditText) findViewById(R.id.etnoparticipant);
     }
 
     //metodos para witget de fecha y hora
@@ -79,5 +92,33 @@ public class Crear_Actividad extends AppCompatActivity implements View.OnClickLi
     public void env_maps2(View vista){
         Intent irmaps2= new Intent(this, MapaCrearActividad.class);
         startActivity(irmaps2);
+    }
+//para registrar actividad
+    public void registraractividad(View vista){
+
+        String nombre_actividad=nombreactividad_txt.getText().toString();
+        String desc=descripcion_txt.getText().toString();
+        int num_part=Integer.parseInt(num_part_txt.getText().toString());
+        final Calendar c = Calendar.getInstance();
+        int year = c.get(Calendar.YEAR);
+        int month = c.get(Calendar.MONTH);
+        int day = c.get(Calendar.DAY_OF_MONTH);
+        int hora1=1;
+        int min1=30;
+
+        if (!nombre_actividad.isEmpty() && !desc.isEmpty() && !String.valueOf(num_part).isEmpty())
+        {
+            String id=Actividades.push().getKey();
+            Actividades actividades= new Actividades
+                    (id,num_part, 0,0, "123", nombre_actividad,
+                            desc, "123",year, month, day,hora1, min1);
+            Actividades.child("actividades").child(id).setValue(actividades);
+            Toast.makeText(this,"Actividad creada",Toast.LENGTH_LONG).show();
+        }else
+        {
+            Toast.makeText(this,"Debe introducir toda la informacion",Toast.LENGTH_LONG).show();
+        }
+
+
     }
 }

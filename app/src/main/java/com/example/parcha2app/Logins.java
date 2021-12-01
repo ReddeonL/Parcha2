@@ -40,21 +40,21 @@ public class Logins extends AppCompatActivity {
         btnLogin=(Button)findViewById(R.id.btningrese);
 
         mAuth2=FirebaseAuth.getInstance();
-        btnLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String email2=Emailtxt.getText().toString();
-                String password2=etpasswordsign.getText().toString();
-                ingresa2(email2,password2);
-                env_maps(v);
 
-            }
-        });
 
     }
+    @Override
+    public void onStart() {
+        super.onStart();
+        //Check if user is signed in (non-null) and update UI accordingly.
+        FirebaseUser currentUser = mAuth2.getCurrentUser();
+        if(currentUser != null){
+            reload();
+        }
+    }
+    public void ingresa2(View view){
 
-    private void ingresa2(String email, String password){
-        mAuth2.signInWithEmailAndPassword(email, password)
+        mAuth2.signInWithEmailAndPassword(Emailtxt.getText().toString(), etpasswordsign.getText().toString())
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
@@ -67,28 +67,22 @@ public class Logins extends AppCompatActivity {
                             etpasswordsign.setText("");
                             Toast.makeText(Logins.this, "Bienvenido!!!",
                                     Toast.LENGTH_SHORT).show();
+                            Intent irmaps= new Intent(Logins.this, MapaCrearActividad  .class);
+                            startActivity(irmaps);
 
                         } else {
                             // If sign in fails, display a message to the user.
-                            Log.w(TAG, "signInWithEmail:failure", task.getException());
+                           // Log.w(TAG, "signInWithEmail:failure", task.getException());
                             Toast.makeText(Logins.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
-                            updateUI(null);
+                            //updateUI(null);
                         }
                     }
                 });
 
     }
 
-    @Override
-    public void onStart() {
-        super.onStart();
-        //Check if user is signed in (non-null) and update UI accordingly.
-        FirebaseUser currentUser = mAuth2.getCurrentUser();
-        if(currentUser != null){
-            reload();
-        }
-    }
+
 
     private void reload() { }
 
