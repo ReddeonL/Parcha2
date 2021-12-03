@@ -22,7 +22,7 @@ import java.util.Calendar;
 public class Crear_Actividad extends AppCompatActivity implements View.OnClickListener {
 //variables para base de datos
     private DatabaseReference Actividades;
-    public EditText idactividad_txt, nombreactividad_txt, descripcion_txt, num_part_txt;
+    public EditText idactividad_txt, nombreactividad_txt, descripcion_txt, num_part_txt,creador_txt;
 
     //variables para widgets de fecha y hora
 
@@ -51,6 +51,7 @@ public class Crear_Actividad extends AppCompatActivity implements View.OnClickLi
         //para tomar datos
         nombreactividad_txt=(EditText)findViewById(R.id.et_nombreactividad);
         descripcion_txt=(EditText)findViewById(R.id.txtdescripcion);
+        creador_txt=(EditText)findViewById(R.id.et_creador);
         num_part_txt=(EditText) findViewById(R.id.etnoparticipant);
     }
 
@@ -98,21 +99,30 @@ public class Crear_Actividad extends AppCompatActivity implements View.OnClickLi
 
         String nombre_actividad=nombreactividad_txt.getText().toString();
         String desc=descripcion_txt.getText().toString();
+        String nombre=creador_txt.getText().toString();
         int num_part=Integer.parseInt(num_part_txt.getText().toString());
-        final Calendar c = Calendar.getInstance();
-        int year = c.get(Calendar.YEAR);
-        int month = c.get(Calendar.MONTH);
-        int day = c.get(Calendar.DAY_OF_MONTH);
-        int hora1=1;
-        int min1=30;
+        //dividir fecha
+        String fechaentera =efecha.getText().toString();
+        String[] fechaDividida = fechaentera.split("/");
+        int year = Integer.parseInt(fechaDividida[2]);
+        int month = Integer.parseInt(fechaDividida[1]);
+        int day = Integer.parseInt(fechaDividida[0]);
+        String horeentera=ehora.getText().toString();
+        String[] horadividida = horeentera.split(":");
+        int hora1=Integer.parseInt(horadividida[0]);
+        int min1=Integer.parseInt(horadividida[1]);
+
+        double lat=getIntent().getDoubleExtra("latitud",0);
+        double lon=getIntent().getDoubleExtra("longitud",0);
+
 
         if (!nombre_actividad.isEmpty() && !desc.isEmpty() && !String.valueOf(num_part).isEmpty())
         {
             String id=Actividades.push().getKey();
-            Actividades actividades= new Actividades
-                    (id,num_part, 0,0, "123", nombre_actividad,
-                            desc, "123",year, month, day,hora1, min1);
-            Actividades.child("actividades").child(id).setValue(actividades);
+            Actividades actividadesi= new Actividades
+                    (id,num_part, lat,lon, nombre_actividad,
+                            desc, nombre,year, month, day,hora1, min1);
+            Actividades.child("actividades").child(id).setValue(actividadesi);
             Toast.makeText(this,"Actividad creada",Toast.LENGTH_LONG).show();
         }else
         {
