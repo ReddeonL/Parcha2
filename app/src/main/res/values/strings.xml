@@ -25,6 +25,6 @@
     <string name="btnunirse">unirse a actividad</string>
     <string name="btsel_fecha">Seleccione la fecha</string>
     <string name="btsel_hora">Seleccione la hora</string>
-    <string name="tv_instrucciones">para unirse a actividad seleccione un marcador en el mapa, para crear una actividad mantenga sostenido en un lugar vacio del mapa</string>
+    <string name="tv_instrucciones">para unirse a actividad seleccione la opcion del menu unirse, para crear una actividad mantenga sostenido en un lugar vacio del mapa</string>
 
 </resources>

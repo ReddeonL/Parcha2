@@ -5,7 +5,9 @@ public class Actividades {
     double latitud, longitud;
 
     String firebaseid, nombre_actividad, descripcion, idusuario;
+    public Actividades() {
 
+    }
     public Actividades(String firebaseid,int numparticipantes, double latitud, double longitud, String nombre_actividad, String descripcion, String idusuario,int anio, int mes, int dia, int hora, int min) {
         this.firebaseid=firebaseid;
         this.nombre_actividad = nombre_actividad;
@@ -20,6 +22,7 @@ public class Actividades {
         this.mes=mes;
         this.dia=dia;
     }
+
     public String getFirebaseid() {
         return firebaseid;
     }

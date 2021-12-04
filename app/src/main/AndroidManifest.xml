@@ -26,8 +26,9 @@
             android:name=".Crear_Actividad"
             android:exported="false" />
         <activity
-            android:name=".Unirse"
+            android:name=".Unirse_usuario"
             android:exported="false" />
+
         <activity
             android:name=".Acercade"
             android:exported="false" />
